@@ -65,6 +65,14 @@ header {
     }
   }
 
+  img {
+    transition: all 1s;
+  }
+
+  img:hover {
+    .hoverEffect(scale(1.05), 5px)
+  }
+
   .content-pick {
     padding-top: 30px;
     border-top: 2px dashed @navigation-border;
@@ -83,6 +91,11 @@ header {
 
   .btn {
     .signup-btn(white, @button-bg);
+    transition: all 1s;
+  }
+
+  .btn:hover {
+    .hoverEffect(scale(1.025), 2.5px);
   }
 }// home
 

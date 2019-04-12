@@ -1,3 +1,5 @@
+// Mixins in here
+
 .signup-btn(@color:white, @backgroundColor:teal) {
   color: @color;
   background-color: @backgroundColor;
@@ -6,4 +8,11 @@
   font-size: 1.6rem;
   width: 85%;
   text-align: center;
-  }// Mixins in here
+  }
+
+
+
+.hoverEffect(@effect, @Shadow) {
+  transform: @effect;
+  box-shadow: @Shadow @Shadow @Shadow black;
+}
