@@ -18,16 +18,22 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
 
-
-
     .text-content {
       width: 48%;
       padding-right: 1%;
+
+      @media @mobile {
+        width: 100%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+
+      @media @mobile {
+        width: 100%;
+      }
 
       img {
         border-radius: 10px;
@@ -68,6 +74,36 @@ header {
     .destination {
       width: 30%;
       margin-bottom: 30px;
+
+      @media @mobile {
+        width: 100%;
+      }
     }
   }
+
+  .btn {
+    .signup-btn(white, @button-bg);
+  }
 }// home
+
+@media @mobile {
+  header, .home {
+    max-width: 90%;
+  }
+
+  .content-section, .inverse-content {
+    display: flex;
+  }
+
+  .content-section {
+    flex-direction: column;
+  }
+
+  .inverse-content {
+    flex-direction: column-reverse;
+  }
+
+  .content-pick {
+    flex-direction: column;
+  }
+}
