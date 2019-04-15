@@ -1,3 +1,15 @@
+header {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 2px dashed @navigation-border;
+  padding-bottom: 8px;
+
+  img {
+    margin-bottom: 20px;
+  }
+}
+
 .home {
 
   .content-section {
@@ -6,16 +18,22 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
-    
     .text-content {
       width: 48%;
       padding-right: 1%;
+
+      @media @mobile {
+        width: 100%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+
+      @media @mobile {
+        width: 100%;
+      }
 
       img {
         border-radius: 10px;
@@ -47,6 +65,14 @@
     }
   }
 
+  img {
+    transition: all 1s;
+  }
+
+  img:hover {
+    .hoverEffect(scale(1.05), 5px)
+  }
+
   .content-pick {
     padding-top: 30px;
     border-top: 2px dashed @navigation-border;
@@ -56,6 +82,41 @@
     .destination {
       width: 30%;
       margin-bottom: 30px;
+
+      @media @mobile {
+        width: 100%;
+      }
     }
   }
+
+  .btn {
+    .signup-btn(white, @button-bg);
+    transition: all 1s;
+  }
+
+  .btn:hover {
+    .hoverEffect(scale(1.025), 2.5px);
+  }
 }// home
+
+@media @mobile {
+  header, .home {
+    max-width: 90%;
+  }
+
+  .content-section, .inverse-content {
+    display: flex;
+  }
+
+  .content-section {
+    flex-direction: column;
+  }
+
+  .inverse-content {
+    flex-direction: column-reverse;
+  }
+
+  .content-pick {
+    flex-direction: column;
+  }
+}
